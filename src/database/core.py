@@ -11,10 +11,11 @@ load_dotenv()
 # DATABASE_URL = os.getenv("DATABASE_URL")
 
 """ Or hard code SQLite here """
-DATABASE_URL = "sqlite:///./todosapp.db"
+# DATABASE_URL = "sqlite:///./todosapp.db"
 
 """ Or hard code PostgreSQL here """
-# DATABASE_URL="postgresql://postgres:postgres@db:5432/cleanfastapi"
+# DATABASE_URL="postgresql://postgres:postgres@localhost:5432/cleanfastapi"
+DATABASE_URL="postgresql://postgres:postgres@db:5432/cleanfastapi"
 
 engine = create_engine(DATABASE_URL)
 

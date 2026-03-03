@@ -10,6 +10,7 @@ class RegisterUserRequest(BaseModel):
 class Token(BaseModel):
     access_token: str
     token_type: str
+    email: str
     
 class TokenData(BaseModel):
     user_id: str | None = None

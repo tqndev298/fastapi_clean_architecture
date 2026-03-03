@@ -84,4 +84,4 @@ def login_for_access_token(form_data: Annotated[OAuth2PasswordRequestForm, Depen
     if not user:
         raise AuthenticationError()
     token = create_access_token(user.email, user.id, timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES))
-    return models.Token(access_token=token, token_type='bearer')
+    return models.Token(access_token=token, token_type='bearer', email=user.email)

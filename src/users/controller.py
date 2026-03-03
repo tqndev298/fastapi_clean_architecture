@@ -16,6 +16,10 @@ router = APIRouter(
 def get_current_user(current_user: CurrentUser, db: DbSession):
     return service.get_user_by_id(db, current_user.get_uuid())
 
+@router.get("/", response_model=list[models.UserResponse])
+def get_users(db:DbSession):
+    return service.get_users(db)
+
 
 @router.put("/change-password", status_code=status.HTTP_200_OK)
 def change_password(

@@ -17,6 +17,10 @@ def get_user_by_id(db: Session, user_id: UUID) -> models.UserResponse:
     return user
 
 
+def get_users(db: Session) -> list[models.UserResponse]:
+    users = db.query(User)
+    return users
+
 def change_password(db: Session, user_id: UUID, password_change: models.PasswordChange) -> None:
     try:
         user = get_user_by_id(db, user_id)
